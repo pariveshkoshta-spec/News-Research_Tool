@@ -30,7 +30,7 @@ multiple financial news articles with accurate, source-backed responses.
 The image below shows the working interface of the News Research Tool, including URL ingestion,
 semantic processing, and question-answering over financial news articles:
 
-![News Research Tool Interface Preview](newsresearchtool.png)
+![News Research Tool Interface Preview](newsresearchtool.jpg)
 
 ## Key Concepts Demonstrated
 
