@@ -1,68 +1,63 @@
+# News Research Tool
 
-# RockyBot: News Research Tool 
+This project is a GenAI-based news research and question-answering system developed to extract
+actionable insights from financial and stock market news articles using semantic search and
+Large Language Models.
 
-RockyBot is a user-friendly news research tool designed for effortless information retrieval. Users can input article URLs and ask questions to receive relevant insights from the stock market and financial domain.
+The system implements an end-to-end Retrieval-Augmented Generation (RAG) pipeline that
+transforms unstructured news content into a searchable knowledge base and generates
+context-aware answers grounded in retrieved sources.
 
-![](newsresearchtool.jpg)
+## Project Objective
 
-## Features
+To design and implement a scalable RAG-based system that enables efficient research across
+multiple financial news articles with accurate, source-backed responses.
 
-- Load URLs or upload text files containing URLs to fetch article content.
-- Process article content through LangChain's UnstructuredURL Loader
-- Construct an embedding vector using OpenAI's embeddings and leverage FAISS, a powerful similarity search library, to enable swift and effective retrieval of relevant information
-- Interact with the LLM's (Chatgpt) by inputting queries and receiving answers along with source URLs.
+## What Was Implemented
 
+- Designed and implemented an end-to-end Retrieval-Augmented Generation (RAG) pipeline
+- Loaded and processed unstructured financial news articles from multiple URLs
+- Cleaned, segmented, and prepared article text for embedding generation
+- Generated dense semantic embeddings using OpenAI Embeddings
+- Indexed embeddings using FAISS for fast similarity-based retrieval
+- Implemented semantic search to retrieve the most relevant context per query
+- Integrated an LLM to generate grounded answers from retrieved content
+- Enabled source attribution to ensure transparency and reliability of responses
+- Built an interactive research interface for querying processed articles
 
-## Installation
+## System Output Preview
 
-1.Clone this repository to your local machine using:
+The image below shows the working interface of the News Research Tool, including URL ingestion,
+semantic processing, and question-answering over financial news articles:
 
-```bash
-  git clone https://github.com/codebasics/langchain.git
-```
-2.Navigate to the project directory:
+![News Research Tool Interface Preview](newsresearchtool.png)
 
-```bash
-  cd 2_news_research_tool_project
-```
-3. Install the required dependencies using pip:
+## Key Concepts Demonstrated
 
-```bash
-  pip install -r requirements.txt
-```
-4.Set up your OpenAI API key by creating a .env file in the project root and adding your API
+- Retrieval-Augmented Generation (RAG)
+- Vector embeddings and semantic similarity search
+- FAISS-based indexing for efficient retrieval
+- LLM grounding using external knowledge sources
+- Practical application of LangChain components
 
-```bash
-  OPENAI_API_KEY=your_api_key_here
-```
-## Usage/Examples
+## Tech Stack Used
 
-1. Run the Streamlit app by executing:
-```bash
-streamlit run main.py
+- Python
+- LangChain
+- OpenAI API
+- FAISS
+- Streamlit
 
-```
+## Project Artifacts
 
-2.The web app will open in your browser.
+- `main.py` – Core implementation of the RAG pipeline and query flow
+- `faiss_store_openai.pkl` – Persisted FAISS vector index for semantic retrieval
+- `newsresearchtool.jpg` – Visual preview of the application interface
+- `requirements.txt` – Dependency specifications
 
-- On the sidebar, you can input URLs directly.
+## Author
 
-- Initiate the data loading and processing by clicking "Process URLs."
+**Developed by:** Parivesh Koshta  
 
-- Observe the system as it performs text splitting, generates embedding vectors, and efficiently indexes them using FAISS.
-
-- The embeddings will be stored and indexed using FAISS, enhancing retrieval speed.
-
-- The FAISS index will be saved in a local file path in pickle format for future use.
-- One can now ask a question and get the answer based on those news articles
-- In video tutorial, we used following news articles
-  - https://www.moneycontrol.com/news/business/tata-motors-mahindra-gain-certificates-for-production-linked-payouts-11281691.html
-  - https://www.moneycontrol.com/news/business/tata-motors-launches-punch-icng-price-starts-at-rs-7-1-lakh-11098751.html
-  - https://www.moneycontrol.com/news/business/stocks/buy-tata-motors-target-of-rs-743-kr-choksey-11080811.html
-
-## Project Structure
-
-- main.py: The main Streamlit application script.
-- requirements.txt: A list of required Python packages for the project.
-- faiss_store_openai.pkl: A pickle file to store the FAISS index.
-- .env: Configuration file for storing your OpenAI API key.
+This project was independently implemented to demonstrate applied expertise in Generative AI,
+LLM-powered systems, and retrieval-based architectures for real-world financial research.
